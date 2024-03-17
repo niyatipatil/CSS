@@ -1,0 +1,315 @@
+body {
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: black;
+    color: white;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .menu {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin-left: auto; /* Aligns menu items to the right */
+  }
+  
+  .menu li {
+    margin-left: 20px; /* Adjusted margin-left for spacing between menu items */
+    position: relative; /* Relative positioning for the hover line */
+  }
+  
+  .menu li:first-child {
+    margin-left: 0; /* Removes margin-left from the first menu item */
+  }
+
+  .menu li::after {
+    content: '';
+    height: 1px;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    background: white;
+    transition: 0.5s;
+  }
+  
+  .menu li:hover::after {
+    width: 80%;
+    left: 10%;
+  }
+  
+  .menu li a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border-radius: 5px;
+   }
+  
+  .menu li.active a {
+    background-color: blue;
+  }
+
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #181818; /* Background color of the hero section */
+  }
+  
+  .left-content {
+    width: 50%;
+    z-index: 2;
+    color: white; /* Text color in the left content */
+  }
+  
+  .right-content {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .right-content img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+  }
+  
+  .section-white {
+    background-color: white;
+    padding: 50px;
+  }
+  
+  .overlap-text {
+    position: relative;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .title {
+    font-size: 58px; /* Adjust the font size as needed */
+  }
+
+  .hero p {
+    font-size: 20px; /* Increase the font size of the paragraph */
+  }
+
+
+/*-------second section-------*/
+.customer-section {
+  background-color: #f8f8f8; /* Light gray background color */
+  padding: 50px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 30px;
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1458e1;
+}
+
+
+/*-----what we do section-----*/
+.what-we-do {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.what-we-do-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 500px;
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #e8e6e6;
+  box-shadow: 0 2px 5px #0000001a;
+  transition: transform 0.5s ease;
+}
+
+.what-we-do-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-content {
+  flex: 1;
+  padding: 10px;
+}
+
+.card-content h2 {
+  margin-bottom: 10px;
+}
+
+.card-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+/* Animation on page load*/
+@keyframes fadeInUpAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.what-we-do-card {
+  animation: fadeInUpAnimation 1.5s ease forwards;
+  opacity: 0;
+}
+
+/*Media queries*/
+@media (max-width: 768px) {
+  .what-we-do {
+    flex-wrap: wrap;
+  }
+  .what-we-do-card {
+    width: calc(50% - 20px);
+    margin-right: 20px;
+  }
+  .what-we-do-card:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+@media (max-width: 480px) {
+  .what-we-do-card {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+
+/*-----------Latest Work Section-------*/
+.latest-work {
+  padding: 50px 0;
+  text-align: center;
+}
+
+.latest-work h2 {
+  margin-bottom: 30px;
+}
+
+.latest-work-card {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  background-color: #e8e6e6;
+  box-shadow: 0 2px 5px #0000001a;
+  transition: transform 0.5s ease;
+}
+
+.latest-work-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-divider {
+  width: 100%;
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.card-contents {
+  padding: 20px;
+}
+
+.card-contents p {
+  margin-bottom: 5px;
+}
+
+.project-name {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.view-case-study {
+  color: blue;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.view-case-study:hover {
+  color: #4076e4;
+}
+
+.latest-work-card {
+  animation: fadeInUpAnimation 1.5s ease forwards;
+  opacity: 0;
+}
+
+/*Media queries*/
+@media (max-width: 768px) {
+  .latest-work-card {
+    max-width: calc(50% - 20px);
+    margin-right: 20px;
+  }
+  .latest-work-card:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .latest-work-card {
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+
+/*-----------Footer-----------*/
+footer {
+  background-color: black;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+  
