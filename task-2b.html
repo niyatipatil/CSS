@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Box Animation</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .outer-box {
+        width: 500px;
+        height: 500px;
+        border: 3px solid black;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden; /* Ensure inner box stays inside outer box */
+      }
+
+      .inner-box {
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+        border: 2px solid black;
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        animation: travel-clockwise 8s infinite linear;
+      }
+
+      @keyframes travel-clockwise {
+        0% {
+          top: 0;
+          left: 0;
+        }
+        25% {
+          top: 0;
+          left: 450px;
+        }
+        50% {
+          top: 450px;
+          left: 450px;
+        }
+        75% {
+          top: 450px;
+          left: 0;
+        }
+        100% {
+          top: 0;
+          left: 0;
+        }
+      }
+
+      @keyframes travel-anticlockwise {
+        0% {
+          top: 0;
+          left: 0;
+        }
+        25% {
+          top: 450px;
+          left: 0;
+        }
+        50% {
+          top: 450px;
+          left: 450px;
+        }
+        75% {
+          top: 0;
+          left: 450px;
+        }
+        100% {
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .inner-box.anticlockwise {
+        animation: travel-anticlockwise 8s infinite linear;
+      }
+      footer {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer-box">
+      <div class="inner-box"></div>
+    </div>
+    <center>
+      <footer>CSS BOX ANIMATION<br />Niyati Patil</footer>
+    </center>
+    <script>
+      const innerBox = document.querySelector(".inner-box");
+      innerBox.addEventListener("animationiteration", () => {
+        innerBox.classList.toggle("anticlockwise");
+      });
+    </script>
+  </body>
+</html>
