@@ -14,7 +14,7 @@ This repository contains examples of CSS animations and interactive elements usi
 
 1. **Clone the Repository**
     ```bash
-    clone the repository
+    clone https://github.com/niyatipatil/css.git
     cd css
     ```
 
